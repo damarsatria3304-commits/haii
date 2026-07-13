@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Maafin Aku</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('bbbg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow: hidden;
+  }
+  h1 {
+    color: #4a2c2a;
+    font-size: 1.8em;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+    animation: denyut 2s ease-in-out infinite;
+  }
+  @keyframes denyut {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  .hati {
+    position: fixed;
+    bottom: -40px;
+    font-size: 1.5em;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: melayang linear infinite;
+    z-index: 0;
+  }
+  @keyframes melayang {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+  }
+  .galeri {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  .fotoku {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15%;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
+  }
+  /* Atur kemiringan & posisi tiap foto di sini, urut sesuai urutan di HTML */
+  .fotoku:nth-child(1) {
+    transform: rotate(-8deg) translateY(10px);
+  }
+  .fotoku:nth-child(2) {
+    transform: rotate(5deg) translateY(-6px);
+  }
+  .fotoku:nth-child(3) {
+    transform: rotate(-4deg) translateY(14px);
+  }
+  #galeriHasil {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  #galeriHasil.tampil {
+    opacity: 1;
+  }
+  .btn-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+  button {
+    padding: 14px 28px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.15s ease;
+  }
+  button:active { transform: scale(0.95); }
+  #iya {
+    background: #4caf50;
+    color: white;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+  }
+  #gamau {
+    background: #f44336;
+    color: white;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-90px);
+  }
+  #hasil {
+    margin-top: 20px;
+    font-size: 1.4em;
+    font: Montserrat Bold;
+    color: #FFFF;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  #hasil.tampil {
+    opacity: 1;
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<!-- Hati melayang untuk animasi background -->
+<span class="hati" style="left:10%; animation-duration:6s; animation-delay:0s;">🌹</span>
+<span class="hati" style="left:30%; animation-duration:8s; animation-delay:1s;">😍</span>
+<span class="hati" style="left:55%; animation-duration:7s; animation-delay:2s;">💗</span>
+<span class="hati" style="left:75%; animation-duration:9s; animation-delay:0.5s;">💖</span>
+<span class="hati" style="left:90%; animation-duration:6.5s; animation-delay:3s;">🥰❤</span>
+
+<h1>hiiii i wanna say samtingg plis mau tau yaaa</h1>
+
+<!-- Galeri foto/video: tinggal copy-paste tag <video> atau <img> di bawah ini kalau mau nambah lagi -->
+<div class="galeri">
+  <img class="fotoku" src="bbseneng.jpg" autoplay loop muted playsinline></img>
+  <video class="fotoku" src="jthsk.mp4" autoplay loop muted playsinline></video>
+  <img class="fotoku" src="bbolip.jpg" autoplay loop muted playsinline></img>
+</div>
+
+
+<div class="btn-container">
+  <div class="row">
+    <button id="iya">Iya dehhh😏😏😏😏😏</button>
+  </div>
+  <button id="gamau">y</button>
+</div>
+
+<!-- Galeri foto/video kedua, muncul setelah tombol "Iya dehhh" diklik -->
+<div class="galeri" id="galeriHasil">
+  <img class="fotoku" src="sin1.png" autoplay loop muted playsinline></img>
+  <img class="fotoku" src="sin4.jpg" autoplay loop muted playsinline></img>
+  <img class="fotoku" src="sin3.png" autoplay loop muted playsinline></img>
+</div>
+
+<div id="hasil">eh eh ehhhh klik iyaaa yaaa😏, mafff yah aku ngga maksud bikin marah kamu asli✌️✌️, i dont mean to made you mad, kalo kamu marah bilang yaaa🌹🌹🌹, kalo kamu mulai keganggu sama aku ngomong ajaaa yaaa, aku bakal nyoba biar ga ganggu kamu,I will try not to bother you if you feel disturbed🌹,,,,oh iyaaa i wanna say am very very luckyy to meet someone like u, lovee you bulann(gapernah ya aku bilang gini hehe)</div>
+
+<!-- Ganti "lagu.mp3" dengan nama file lagu kamu, taruh di folder yang sama dengan file HTML ini -->
+<audio id="bgMusic" src="bukti.mp3" loop></audio>
+
+<script>
+  const gamauBtn = document.getElementById('gamau');
+  const iyaBtn = document.getElementById('iya');
+  const hasil = document.getElementById('hasil');
+  const galeriHasil = document.getElementById('galeriHasil');
+  const container = document.querySelector('.btn-container');
+  const music = document.getElementById('bgMusic');
+
+  let iyaScale = 1;
+
+  function pindahTombol() {
+    const maxX = container.clientWidth - gamauBtn.offsetWidth;
+    const maxY = container.clientHeight - gamauBtn.offsetHeight;
+    const randX = Math.random() * maxX;
+    const randY = Math.random() * maxY;
+    gamauBtn.style.left = randX + 'px';
+    gamauBtn.style.top = randY + 'px';
+    gamauBtn.style.transform = 'none';
+
+    // Setiap gamau dipencet, tombol iya jadi tambah gede
+    iyaScale += 0.15;
+    iyaBtn.style.transform = 'scale(' + iyaScale + ')';
+  }
+
+  gamauBtn.addEventListener('mouseover', pindahTombol);
+  gamauBtn.addEventListener('click', pindahTombol);
+  gamauBtn.addEventListener('touchstart', function(e){
+    e.preventDefault();
+    pindahTombol();
+  });
+
+  iyaBtn.addEventListener('click', function() {
+    hasil.style.display = 'block';
+    galeriHasil.style.display = 'flex';
+    gamauBtn.style.display = 'none';
+    // beri jeda sedikit biar transisi fade-in kepakai
+    setTimeout(function() {
+      galeriHasil.classList.add('tampil');
+      hasil.classList.add('tampil');
+    }, 30);
+  });
+
+  // Coba autoplay musik saat halaman dibuka
+  window.addEventListener('load', function() {
+    music.play().catch(function() {
+      // Kalau browser blokir autoplay, mainkan saat pertama kali disentuh layar
+      document.body.addEventListener('click', function once() {
+        music.play();
+        document.body.removeEventListener('click', once);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
