@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maafin Aku</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 <style>
@@ -128,6 +129,51 @@
     position: relative;
     z-index: 1;
   }
+  /* Responsif untuk semua ukuran HP */
+@media screen and (max-width: 768px){
+
+  body{
+    padding:15px;
+  }
+
+  h1{
+    font-size:clamp(22px,5vw,30px);
+    margin-bottom:18px;
+  }
+
+  .galeri{
+    gap:10px;
+  }
+
+  .fotoku{
+    width:24vw;
+    height:24vw;
+    max-width:120px;
+    max-height:120px;
+    min-width:80px;
+    min-height:80px;
+  }
+
+  .btn-container{
+    width:100%;
+    max-width:380px;
+    height:180px;
+  }
+
+  button{
+    font-size:16px;
+    padding:12px 22px;
+  }
+
+  #hasil{
+    width:100%;
+    max-width:100%;
+    font-size:16px;
+    line-height:1.5;
+    padding:0 10px;
+  }
+
+}
 </style>
 </head>
 <body>
